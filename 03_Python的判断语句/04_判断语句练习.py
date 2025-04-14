@@ -1,7 +1,7 @@
 import random
 
 # 猜随机数字
-print("这是一个1~10的整数，请猜猜它是多少")
+print("这是一个1~10的整数，请猜猜它是多少（三次机会）")
 num = random.randint(1, 10)
 temp = int(input("第一次猜测："))
 if temp != num:
@@ -24,3 +24,5 @@ if temp != num:
         print("第二次猜对了，这个数就是：", num)
 else:
     print("第一次猜对了，这个数就是：", num)
+
+input("点击任意按键退出")

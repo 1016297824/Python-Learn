@@ -1,4 +1,11 @@
 # 列表
+# 定义
+["霸气", "可爱", "小蜜蜂"]
+list_name = ["霸气", "可爱", "小蜜蜂"]
+list_name = []
+list_name = list()
+
+# 二维列表
 list_name = [["霸气", "可爱", "小蜜蜂"], ["1999.01.16", 27], [165, 127.5, "C"]]
 print(list_name)
 print(type(list_name))

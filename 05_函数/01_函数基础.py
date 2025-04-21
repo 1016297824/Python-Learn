@@ -34,9 +34,19 @@ print(add1(1, 2, z), " ", z)
 z = 0
 print(add2(1, 2, z), " ", z)
 
-def add3(x,y):
+
+def add3(x, y):
     result = x + y
     return result
 
+
 result = add3(5, 2)
 print(result)
+
+
+def sayHello():
+    print("Hello")
+
+result = sayHello()
+print("返回值", result)
+print("类型：", type(result))

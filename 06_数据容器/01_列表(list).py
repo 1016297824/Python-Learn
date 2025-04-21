@@ -119,3 +119,33 @@ print()
 # 查询列表全部元素个数
 count = len(list_name)
 print(count)
+print()
+
+# 列表的遍历
+list_name = [["霸气", "可爱", "小蜜蜂"], ["1999.01.16", 27], [165, 127.5, "C"]]
+# while循环遍历
+index = 0
+while index < len(list_name):
+    index1 = 0
+    while index1 < len(list_name[index]):
+        print(list_name[index][index1], end=" ")
+        index1 += 1
+    print()
+    index += 1
+print()
+# while循环逆向遍历
+index = -1
+while index >= -len(list_name):
+    index1 = -1
+    while index1 >= -len(list_name[index]):
+        print(list_name[index][index1], end=" ")
+        index1 -= 1
+    print()
+    index -= 1
+print()
+# for循环遍历
+for item in list_name:
+    for item1 in item:
+        print(item1, end=" ")
+    print()
+print()

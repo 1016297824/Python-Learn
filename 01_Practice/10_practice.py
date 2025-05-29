@@ -8,6 +8,7 @@ os.environ['PYSPARK_PYTHON'] = "G:/Python/3.10.6/python.exe"
 conf = SparkConf().setMaster("local[*]").setAppName("practice_spark")
 sc = SparkContext(conf=conf)
 
+# 方法1：
 # 获取文件内容，存入列表
 item_list: list[str] = []
 with open("pyspark1.txt", "r", encoding="utf-8") as f:
@@ -22,6 +23,26 @@ with open("pyspark1.txt", "r", encoding="utf-8") as f:
 rdd = sc.parallelize(item_list)
 # 将RDD数据存储为二元元组
 rdd_KY = rdd.map(lambda x: (x, 1))
+# 统计每个元素的个数
+rdd_reduce = rdd_KY.reduceByKey(lambda x, y: x + y)
+# 输出结果
+result = rdd_reduce.collect()
+print(result)
+
+# 方法2：
+# 获取文件内容，存入列表
+rdd = sc.textFile("pyspark1.txt")
+# print(rdd.collect())
+def func(line):
+    line = line.strip()
+    line = line.replace("  ", " ")
+    result = line.split(" ")
+    return result
+rdd_list = rdd.flatMap(func)
+# print(rdd_list.collect())
+# 将RDD数据存储为二元元组
+rdd_KY = rdd_list.map(lambda x: (x, 1))
+# print(rdd_KY.collect())
 # 统计每个元素的个数
 rdd_reduce = rdd_KY.reduceByKey(lambda x, y: x + y)
 # 输出结果

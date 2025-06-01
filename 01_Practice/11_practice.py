@@ -1,7 +1,6 @@
 # pyspark练习2
 # 整理每个单词的个数
 import json
-
 from pyspark import SparkConf, SparkContext
 import os
 

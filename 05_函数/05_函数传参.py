@@ -8,6 +8,7 @@ import time
     整数(int)
     浮点数(float)
     元组(tuple)
+    字节序列(bytes)
 """
 
 

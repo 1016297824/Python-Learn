@@ -11,7 +11,7 @@ while True:
     # 3.发送数据
     msg = input("请输入发送内容：")
     if msg == "exit":
-        socket_client.send("客户端断开链接".encode("utf-8"))
+        socket_client.send("exit".encode("utf-8"))
         break
     socket_client.send(msg.encode("utf-8"))
 

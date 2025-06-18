@@ -8,7 +8,7 @@ socket_sever = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # 2.绑定IP地址和端口
 socket_sever.bind(("localhost", 8888))
 
-# 3.设置监听数量
+# 3.设置最大监听数量
 socket_sever.listen(5)
 
 # 4.等待客户端链接
@@ -19,12 +19,13 @@ socket_sever.listen(5)
 conn, addr = socket_sever.accept()  # 返回一个二元元组
 # 注：accept()方法是阻塞方法，会等待客户端链接（没有客户端链接时，会一直阻塞）
 
+print(f"{type(conn)}客户端已连接,客户端信息：{conn}")
 print(f"客户端已连接,客户端信息：{addr}")
 
 while True:
     # 5.接受客户端信息
     '''
-        recv():缓冲区大小，一般为1024
+        recv():缓冲区大小，一般为1024，recv()方法是阻塞的
         decode():将recv()返回的字节序列（bytes对象）解码为字符串对象
     '''
     data: str = conn.recv(1024).decode("UTF-8")

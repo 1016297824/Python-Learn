@@ -60,3 +60,8 @@ if __name__ == '__main__':
     song1.start()
     dance.start()
     dance1.start()
+
+    song.join()
+    song1.join()
+    dance.join()
+    dance1.join()

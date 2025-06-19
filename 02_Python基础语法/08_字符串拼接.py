@@ -18,7 +18,7 @@ print("霸气可爱小州官 身高 %s cm，一拳 %s 斤" % (shengao, quanjin))
 print(message)
 print("\n")
 
-# 字符串站位拼接，%d、%f原装拼接
+# 字符串站位拼接，%d1.txt、%f原装拼接
 shengao = 165.5
 quanjin = 900
 message = "霸气可爱小州官 身高 %.2f cm，一拳 %d 斤" % (shengao, quanjin)
